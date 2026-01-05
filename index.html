@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | School Awareness</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Popup -->
+<div id="callToActionModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3><u>WE NEED TO DO BETTER</u></h3>
+    <p>In a survey of 116 random students in Haverhill High, approximately 82% feel anxious in schools due to threats of gun violence.</p>
+  </div>
+</div>
+
+
+<header>
+  <h1>Welcome to School Awareness</h1>
+  <p class="tagline">
+    Learn, support, and spread awareness about school safety and mental health resources.
+  </p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="articles.html">Schools Affected</a>
+    <a href="resources.html">Resources</a>
+    <a href="mural.html">Mural</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Our Goal</h2>
+    <p>
+      We strive to raise awareness about school-based gun violence and provide support for students who feel unsafe. Our mission is to create a space where young people can learn, share, and access resources to help them feel secure and supported in their schools.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 | CTE Capstone | Aliza Ahmed & Melody Brien </p>
+</footer>
+
+<script>
+ window.addEventListener('load', function() {
+  // if (!localStorage.getItem('modalShown')) {   <-- comment out this line
+    const modal = document.getElementById("callToActionModal");
+    const closeBtn = modal.querySelector(".close-button");
+
+    modal.style.display = "flex";
+    modal.classList.add('fade-in');
+
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = "none";
+      // localStorage.setItem('modalShown', 'true'); <-- comment this out
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+        // localStorage.setItem('modalShown', 'true'); <-- comment this out
+      }
+    });
+ })
+
+</script>
+
+
+</body>
+</html>
