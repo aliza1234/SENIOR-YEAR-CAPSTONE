@@ -63,29 +63,30 @@
 </footer>
 
 <script>
- window.addEventListener('load', function() {
-  // if (!localStorage.getItem('modalShown')) {   <-- comment out this line
-    const modal = document.getElementById("callToActionModal");
-    const closeBtn = modal.querySelector(".close-button");
+  window.addEventListener('load', function() {
 
-    modal.style.display = "flex";
-    modal.classList.add('fade-in');
+    if (!localStorage.getItem('modalShown')) {
+      const modal = document.getElementById("callToActionModal");
+      const closeBtn = modal.querySelector(".close-button");
 
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = "none";
-      // localStorage.setItem('modalShown', 'true'); <-- comment this out
-    });
+      modal.style.display = "flex";
+      modal.classList.add('fade-in'); 
 
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
+ 
+      closeBtn.addEventListener('click', function() {
         modal.style.display = "none";
-        // localStorage.setItem('modalShown', 'true'); <-- comment this out
-      }
-    });
- })
+        localStorage.setItem('modalShown', 'true'); 
+      });
 
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          localStorage.setItem('modalShown', 'true');
+        }
+      });
+    }
+  });
 </script>
-
 
 </body>
 </html>
